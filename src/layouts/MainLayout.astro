@@ -1,0 +1,36 @@
+---
+import '../styles/global.css'  
+const {title} = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-zinc-900 antialiased font-['Inter']">
+    <slot /> 
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+</style>

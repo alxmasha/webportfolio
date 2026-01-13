@@ -1,16 +1,30 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Your Name | Portfolio">
+  <main class="max-w-6xl mx-auto px-8 py-20">
+    <nav class="flex justify-between items-center mb-32">
+      <div class="text-lg font-semibold tracking-tighter uppercase">Your Name</div>
+      <div class="flex gap-10 text-xs uppercase tracking-widest text-gray-400">
+        <a href="#work" class="hover:text-black transition-colors">Work</a>
+        <a href="#" class="hover:text-black transition-colors">About</a>
+      </div>
+    </nav>
+
+    <header class="mb-48">
+      <h1 class="text-6xl md:text-9xl mb-12 max-w-5xl leading-[0.9] tracking-tighter">
+        Digital Experience <br/> Designer.
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-500 max-w-xl leading-relaxed">
+        Crafting minimalist products and high-end interactions.
+      </p>
+    </header>
+
+    <section id="work" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+      <ProjectCard title="Project One" category="Identity" imagePath="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=800" />
+      <ProjectCard title="Project Two" category="UI/UX" imagePath="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800" />
+    </section>
+  </main>
+</MainLayout>
