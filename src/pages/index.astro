@@ -1,30 +1,262 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+const title = "Masha Alekseeva";
 ---
 
-<MainLayout title="Your Name | Portfolio">
-  <main class="max-w-6xl mx-auto px-8 py-20">
-    <nav class="flex justify-between items-center mb-32">
-      <div class="text-lg font-semibold tracking-tighter uppercase">Your Name</div>
-      <div class="flex gap-10 text-xs uppercase tracking-widest text-gray-400">
-        <a href="#work" class="hover:text-black transition-colors">Work</a>
-        <a href="#" class="hover:text-black transition-colors">About</a>
-      </div>
-    </nav>
-
-    <header class="mb-48">
-      <h1 class="text-6xl md:text-9xl mb-12 max-w-5xl leading-[0.9] tracking-tighter">
-        Experience <br/> .
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-500 max-w-xl leading-relaxed">
-        bla bla bla.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <section class="intro">
+      <h1>hi there,</h1>
+      
+      <p>
+        <strong>i'm Masha</strong>. i'm a Stanford-trained engineer and biopharma generalist. 
+        i am naturally curious about human health and improving wellbeing for all.
+        find out more about my <strong>research and experience</strong> below!
       </p>
-    </header>
 
-    <section id="work" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-      <ProjectCard title="Project One" category="Identity" imagePath="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=800" />
-      <ProjectCard title="Project Two" category="UI/UX" imagePath="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800" />
+      <p>
+        i've [done this] at <a href="#">here</a> and [that] at <a href="#">project two</a>, but right now, i'm thinking about personal 
+        [accssb] (<a href="#">current project</a>).
+      </p>
+
+      <p>
+        i started my career as a wet lab bioengineer before moving into applying AI/ML models for molecular design. i have worked with incredible people at great companies like 
+        <strong>Genentech</strong> and <strong>Inceptive</strong>.
+      </p>
+
+      <p>
+        i love theorizing, new ideas and working with mission-driven people. <a href="mailto:you@email.com">email</a> 
+        or <a href="#">message me</a> if you wanna chat about ideas, collaborate, or just say hi.
+      </p>
     </section>
+
+    <section class="projects">
+      <h2>things i've made</h2>
+      
+      <div class="project-grid">
+        <a href="#" class="project-card">
+          <div class="project-image">
+            <div class="placeholder">Project Image</div>
+          </div>
+          <h3>Project Name</h3>
+          <p>A brief description of what this project is about and why you built it.</p>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="project-image">
+            <div class="placeholder">Project Image</div>
+          </div>
+          <h3>Another Project</h3>
+          <p>Another cool thing you've worked on that you're proud of.</p>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="project-image">
+            <div class="placeholder">Project Image</div>
+          </div>
+          <h3>Side Project</h3>
+          <p>A fun side project or experiment you've been tinkering with.</p>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Masha. Made with care.</p>
+      <div class="links">
+        <a href="https://twitter.com/yourhandle">Twitter</a>
+        <a href="https://github.com/yourhandle">GitHub</a>
+        <a href="mailto:you@email.com">Email</a>
+      </div>
+    </footer>
   </main>
-</MainLayout>
+</body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #e8e3d8;
+    --text: #2d2d2d;
+    --text-light: #5a5a5a;
+    --accent: #1a1a1a;
+    --link: #4a4a4a;
+    --border: #d0cbc0;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    color: var(--text-light);
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 80px 0 32px;
+    color: var(--accent);
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+
+  p {
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--accent);
+    text-decoration-thickness: 2px;
+  }
+
+  .intro {
+    margin-bottom: 60px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .project-card {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .project-card:hover .project-image {
+    border-color: var(--accent);
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #f5f2eb;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+
+  .project-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .project-card p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  footer {
+    margin-top: 120px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .links a {
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 32px;
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+</style>
