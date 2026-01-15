@@ -14,10 +14,10 @@ const title = "Background - Maria Alekseeva";
 </head>
 <body>
   <nav class="top-nav">
-    <a href="/" class="back-link">← home</a>
+    <a href="./" class="back-link">← home</a>
     <div class="nav-links">
-      <a href="/projects">projects</a>
-      <a href="/writing">writing</a>
+      <a href="./projects">projects</a>
+      <a href="./writing">writing</a>
     </div>
   </nav>
 
@@ -33,7 +33,9 @@ const title = "Background - Maria Alekseeva";
 
     <section class="timeline">
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/captify.svg" alt="Captify" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>Head of Sales and BD</h3>
@@ -44,7 +46,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/inceptive.svg" alt="Inceptive" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>Technical Staff</h3>
@@ -61,7 +65,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/stanford.svg" alt="Stanford University" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>M.S. Bioengineering</h3>
@@ -73,7 +79,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/scale-ai.svg" alt="Scale AI" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>AI/ML Model Training Contractor</h3>
@@ -88,7 +96,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/recombia.svg" alt="Recombia Biosciences" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>Engineering Assistant</h3>
@@ -104,7 +114,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/stanford.svg" alt="Stanford University" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>B.S. Chemical Engineering</h3>
@@ -116,7 +128,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/stanford.svg" alt="Stanford Medicine" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>Research Assistant</h3>
@@ -132,7 +146,9 @@ const title = "Background - Maria Alekseeva";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-marker"></div>
+        <div class="timeline-marker">
+          <img src="/logos/hermiona.svg" alt="Hermiona Education" class="timeline-logo" />
+        </div>
         <div class="timeline-content">
           <div class="timeline-header">
             <h3>Consultant and Tutor</h3>
@@ -278,13 +294,13 @@ const title = "Background - Maria Alekseeva";
 
   .timeline {
     position: relative;
-    padding-left: 40px;
+    padding-left: 50px;
   }
 
   .timeline::before {
     content: '';
     position: absolute;
-    left: 12px;
+    left: 16px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -300,12 +316,34 @@ const title = "Background - Maria Alekseeva";
     position: absolute;
     left: -33px;
     top: 6px;
-    width: 14px;
-    height: 14px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 0 4px rgba(45, 45, 45, 0.1);
+    background: white;
+    border: 2px solid var(--border);
+    box-shadow: 0 0 0 4px rgba(45, 45, 45, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .timeline-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .timeline-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .timeline-icon svg {
+    width: 16px;
+    height: 16px;
   }
 
   .timeline-content {
@@ -394,11 +432,22 @@ const title = "Background - Maria Alekseeva";
 
   @media (max-width: 640px) {
     .timeline {
-      padding-left: 32px;
+      padding-left: 42px;
+    }
+
+    .timeline::before {
+      left: 12px;
     }
 
     .timeline-marker {
       left: -27px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .timeline-icon svg {
+      width: 14px;
+      height: 14px;
     }
 
     .timeline-header {

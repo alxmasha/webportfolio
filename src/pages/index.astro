@@ -10,33 +10,33 @@ const title = "Maria Alekseeva";
   <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="hero">
-    <div class="hero-content">
-      <h1>hi there,</h1>
+  <main class="container">
+    <div class="content">
+      <h1 class="greeting">hi there,</h1>
       
-      <p class="hero-intro">
+      <p class="intro">
         i'm masha. i'm a stanford-trained bioengineer building at the intersection 
         of biology, computation, and human health. i'm naturally curious about 
         scientific innovation and drug development. always thinking about how we 
         can work better in healthcare and biopharma.
       </p>
 
-      <nav class="hero-nav">
-        <a href="/background" class="nav-button">background</a>
-        <a href="/projects" class="nav-button">projects</a>
-        <a href="/writing" class="nav-button">writing</a>
+      <nav class="nav-buttons">
+        <a href="./background" class="nav-button">background</a>
+        <a href="./projects" class="nav-button">projects</a>
+        <a href="./writing" class="nav-button">writing</a>
       </nav>
 
-      <div class="contact-links">
+      <footer class="contact">
         <a href="mailto:alxmasha@alumni.stanford.edu">email</a>
-        <span class="separator">·</span>
+        <span class="dot">·</span>
         <a href="https://www.linkedin.com/in/mariaalekseeva">linkedin</a>
-        <span class="separator">·</span>
+        <span class="dot">·</span>
         <a href="https://github.com/yourusername">github</a>
-      </div>
+      </footer>
     </div>
   </main>
 </body>
@@ -71,104 +71,125 @@ const title = "Maria Alekseeva";
     color: var(--text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
-  }
-
-  .hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 40px 24px;
   }
 
-  .hero-content {
-    max-width: 650px;
-    text-align: center;
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  h1 {
-    font-size: 28px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .greeting {
+    font-size: 48px;
     font-weight: 400;
-    margin-bottom: 32px;
-    color: var(--text-light);
+    color: var(--accent);
+    letter-spacing: -0.02em;
   }
 
-  .hero-intro {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 48px;
+  .intro {
+    font-size: 24px;
+    line-height: 1.5;
     color: var(--text);
+    font-weight: 400;
+    max-width: 700px;
   }
 
-  .hero-nav {
+  .nav-buttons {
     display: flex;
     gap: 16px;
-    justify-content: center;
-    margin-bottom: 40px;
     flex-wrap: wrap;
+    margin-top: 16px;
   }
 
   .nav-button {
-    padding: 12px 32px;
-    background: rgba(255, 255, 255, 0.6);
+    padding: 14px 32px;
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border: 2px solid var(--border);
     border-radius: 8px;
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 17px;
     transition: all 0.2s ease;
+    display: inline-block;
   }
 
   .nav-button:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-color: var(--accent);
     transform: translateY(-2px);
   }
 
-  .contact-links {
+  .contact {
     display: flex;
     gap: 12px;
-    justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 24px;
   }
 
-  .contact-links a {
+  .contact a {
     color: var(--link);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    transition: all 0.2s ease;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
   }
 
-  .contact-links a:hover {
+  .contact a:hover {
     color: var(--accent);
+    text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
   }
 
-  .separator {
+  .dot {
     color: var(--text-light);
   }
 
-  @media (max-width: 640px) {
-    h1 {
-      font-size: 24px;
-      margin-bottom: 24px;
+  @media (max-width: 768px) {
+    body {
+      padding: 32px 20px;
     }
 
-    .hero-intro {
-      font-size: 18px;
-      margin-bottom: 36px;
+    .greeting {
+      font-size: 36px;
+    }
+
+    .intro {
+      font-size: 20px;
     }
 
     .nav-button {
-      padding: 10px 24px;
-      font-size: 15px;
+      padding: 12px 24px;
+      font-size: 16px;
     }
 
-    .hero-nav {
+    .contact {
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .greeting {
+      font-size: 32px;
+    }
+
+    .intro {
+      font-size: 18px;
+    }
+
+    .nav-buttons {
       gap: 12px;
     }
   }
